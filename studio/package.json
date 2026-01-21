@@ -1,0 +1,15 @@
+{
+  "name": "orlinski-realty-group-studio",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "sanity dev",
+    "start": "sanity start",
+    "build": "sanity build",
+    "deploy": "sanity deploy"
+  },
+  "dependencies": {
+    "sanity": "^3.50.0",
+    "@sanity/vision": "^3.50.0"
+  }
+}
