@@ -108,7 +108,7 @@ export default function RichardOrlinskiPage() {
               A cultural reach that shapes markets.
             </h2>
             <p className="text-graphite text-lg">
-              Richard Orlinski’s global audience and brand visibility translate into real-world
+              Richard Orlinski&apos;s global audience and brand visibility translate into real-world
               demand for art‑led destinations.
             </p>
           </div>
@@ -161,10 +161,10 @@ export default function RichardOrlinskiPage() {
           <h2 className="font-heading text-4xl md:text-5xl font-bold text-black">
             The Orlinski Universe
           </h2>
-          <p className="text-graphite text-lg">
-            A visual language spanning sculpture, architecture, hospitality, and lifestyle — crafted
-            to turn space into a collectible experience.
-          </p>
+            <p className="text-graphite text-lg">
+              A visual language spanning sculpture, architecture, hospitality, and lifestyle — crafted
+              to turn space into a collectible experience.
+            </p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           <EditorialCard
@@ -224,7 +224,7 @@ export default function RichardOrlinskiPage() {
           </h2>
           <p className="text-stone text-lg md:text-xl">
             Partner with Orlinski Realty Group to create branded residences that transform real estate
-            into collectible art. Discover how Richard Orlinski's artistic vision can elevate your
+            into collectible art. Discover how Richard Orlinski&apos;s artistic vision can elevate your
             concept.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
