@@ -333,7 +333,7 @@ export default async function HomePage() {
               </div>
             </Link>
             <div className="grid gap-6">
-              {projects.slice(1, 3).map((project) => (
+              {projects.slice(1, 3).map((project: any) => (
                 <Link
                   key={project.slug}
                   href={`/projects/${project.slug}`}
