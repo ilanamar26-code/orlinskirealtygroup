@@ -22,9 +22,9 @@ export default async function BrandPage({ params }: { params: { slug: string } }
       : null
 
   return (
-    <div className="space-y-12 py-12">
+    <div className="mx-auto max-w-[1200px] space-y-12 px-4 py-10 sm:px-6 lg:px-8">
       {heroImageUrl && (
-        <div className="relative aspect-[21/9] w-full overflow-hidden rounded-lg">
+        <div className="relative aspect-[21/9] w-full overflow-hidden rounded-3xl border border-black/10 shadow-[0_30px_80px_-60px_rgba(0,0,0,0.7)]">
           <Image src={heroImageUrl} alt={brand.name} fill className="object-cover" />
         </div>
       )}

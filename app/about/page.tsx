@@ -1,10 +1,10 @@
 export default function AboutPage() {
   return (
-    <div className="space-y-24 py-12">
+    <div className="mx-auto max-w-[1200px] space-y-24 px-4 py-10 sm:px-6 lg:px-8">
       <section className="space-y-6 max-w-3xl">
         <h1 className="font-heading text-5xl md:text-6xl font-bold text-black">About</h1>
         <p className="text-graphite text-lg">
-          Orlinski Realty Group (ORG) curates branded residences and hospitality partnerships,
+          Orlinski Realty Group curates branded residences and hospitality partnerships,
           bringing together the artistic vision of Richard Orlinski with visionary real estate
           developers.
         </p>

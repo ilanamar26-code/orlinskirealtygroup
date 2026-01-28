@@ -6,7 +6,7 @@ const footerLinks = {
     { label: 'Home', href: '/' },
     { label: 'Developers', href: '/developers' },
     { label: 'Richard Orlinski', href: '/brands' },
-    { label: 'Projects', href: '/projects' },
+    { label: 'Concepts', href: '/projects' },
     { label: 'Press', href: '/press' },
     { label: 'About', href: '/about' },
     { label: 'Contact', href: '/contact' },
@@ -26,7 +26,7 @@ export function Footer() {
           <div className="space-y-4">
             <Logo variant="silver" className="h-48" />
             <p className="text-stone text-sm max-w-xs">
-              Curating branded residences and hospitality partnerships. NDA-first, curated access.
+              Curating branded residences and hospitality partnerships. Confidentiality, curated access.
             </p>
           </div>
 

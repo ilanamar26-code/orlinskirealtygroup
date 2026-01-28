@@ -23,9 +23,9 @@ export default async function InsightPage({ params }: { params: { slug: string }
     : null
 
   return (
-    <div>
+    <div className="mx-auto max-w-[1200px] px-4 py-10 sm:px-6 lg:px-8">
       {imageUrl && (
-        <div className="relative w-full h-[60vh] -mx-6 lg:-mx-12 mb-12">
+        <div className="relative w-full h-[60vh] -mx-4 sm:-mx-6 lg:-mx-8 mb-12 overflow-hidden rounded-3xl border border-black/10 shadow-[0_30px_80px_-60px_rgba(0,0,0,0.7)]">
           <Image
             src={imageUrl}
             alt={insight.title}
@@ -40,7 +40,7 @@ export default async function InsightPage({ params }: { params: { slug: string }
       <div className="max-w-4xl">
         <div className="mb-6">
           {insight.category && (
-            <span className="inline-block text-xs uppercase tracking-wider text-graphite mb-4">
+            <span className="inline-block text-xs uppercase tracking-[0.25em] text-black/70 mb-4">
               {insight.category}
             </span>
           )}

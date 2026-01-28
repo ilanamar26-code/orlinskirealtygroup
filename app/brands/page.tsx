@@ -7,9 +7,9 @@ import { richardOrlinskiImages, getImageUrl, getRandomImage } from '@/lib/richar
 
 export default function RichardOrlinskiPage() {
   return (
-    <div className="min-h-screen">
+    <div className="mx-auto max-w-[1200px] space-y-24 px-4 py-10 sm:px-6 lg:px-8">
       {/* Hero Section with Image */}
-      <section className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center min-h-[calc(100vh-160px)] py-12 lg:py-16">
+      <section className="grid lg:grid-cols-[1.05fr_0.95fr] gap-8 lg:gap-12 items-center min-h-[70vh]">
         {/* Left Column: Content */}
         <div className="space-y-8 lg:space-y-10 order-2 lg:order-1">
           {/* Title */}
@@ -18,58 +18,63 @@ export default function RichardOrlinskiPage() {
               Richard Orlinski
             </h1>
             <p className="text-graphite text-lg md:text-xl leading-relaxed max-w-2xl">
-              French contemporary artist, sculptor, and creator of the Orlinski artistic universe. 
-              The most sold contemporary French artist in the world, with works exhibited globally 
-              and collected by art enthusiasts worldwide.
+              Contemporary French artist and sculptor behind the Orlinski universe. A global
+              best‑seller known for faceted geometry, monumental scale, and accessible luxury.
             </p>
           </div>
 
           {/* Biography */}
-          <div className="space-y-5 text-graphite text-base md:text-lg leading-relaxed max-w-2xl">
+          <div className="space-y-4 text-graphite text-base md:text-lg leading-relaxed max-w-2xl">
             <p>
-              Born in 1966, Richard Orlinski is a self-taught French artist who has revolutionized 
-              contemporary sculpture with his distinctive faceted geometry aesthetic. His work bridges 
-              the gap between art and popular culture, making contemporary art accessible to a wider 
-              audience.
+              Self‑taught and globally exhibited, his signature “Born Wild” sculptures celebrate
+              freedom, power, and the untamed spirit through sharp, light‑catching facets.
             </p>
             <p>
-              Orlinski's artistic philosophy centers on the concept of "Born Wild" - a celebration 
-              of freedom, strength, and the untamed spirit. His sculptures, often featuring wild 
-              animals and abstract forms, are characterized by their sharp, geometric facets that 
-              create dynamic plays of light and shadow.
-            </p>
-            <p>
-              His monumental sculptures have been exhibited in prestigious locations including the 
-              Champs-Élysées in Paris, Times Square in New York, and major art fairs worldwide. 
-              Orlinski's work transcends traditional art boundaries, appearing in galleries, 
-              public spaces, and now, branded real estate developments.
+              His work lives at the intersection of art, culture, and luxury — now translated into
+              branded residences and hospitality environments.
             </p>
           </div>
 
           {/* Statistics */}
-          <div className="grid grid-cols-2 gap-6 md:gap-8 pt-4 border-t border-stone/20">
-            <div>
-              <div className="text-4xl md:text-5xl font-bold text-gold mb-2">#1</div>
-              <p className="text-graphite text-sm md:text-base leading-snug">Most sold contemporary French artist worldwide</p>
-            </div>
-            <div>
-              <div className="text-4xl md:text-5xl font-bold text-gold mb-2">500K+</div>
-              <p className="text-graphite text-sm md:text-base leading-snug">Artworks sold globally</p>
-            </div>
-            <div>
-              <div className="text-4xl md:text-5xl font-bold text-gold mb-2">100+</div>
-              <p className="text-graphite text-sm md:text-base leading-snug">Countries with Orlinski collections</p>
-            </div>
-            <div>
-              <div className="text-4xl md:text-5xl font-bold text-gold mb-2">20+</div>
-              <p className="text-graphite text-sm md:text-base leading-snug">Years of artistic creation</p>
-            </div>
+          <div className="grid grid-cols-2 gap-4">
+            {[
+              { value: '#1', label: 'Most sold contemporary French artist' },
+              { value: '500K+', label: 'Artworks sold globally' },
+              { value: '100+', label: 'Countries with collections' },
+              { value: '20+', label: 'Years of creation' },
+            ].map((stat) => (
+              <div
+                key={stat.label}
+                className="rounded-2xl border border-black/10 bg-white p-4 shadow-[0_20px_50px_-40px_rgba(0,0,0,0.6)]"
+              >
+                <div className="text-3xl md:text-4xl font-bold text-gold">{stat.value}</div>
+                <p className="text-xs md:text-sm text-graphite leading-snug mt-2">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Key Principles */}
+          <div className="grid gap-4 sm:grid-cols-2 pt-4 border-t border-black/10">
+            {[
+              { title: 'Born Wild', text: 'Freedom, strength, and raw emotion.' },
+              { title: 'Faceted Geometry', text: 'Light, shadow, and sculptural identity.' },
+              { title: 'Monumental Scale', text: 'Icons that define place and memory.' },
+              { title: 'Collectible Living', text: 'Art translated into experience.' },
+            ].map((item) => (
+              <div
+                key={item.title}
+                className="rounded-2xl border border-black/10 bg-offwhite/80 p-4 shadow-[0_20px_50px_-40px_rgba(0,0,0,0.6)]"
+              >
+                <p className="text-xs uppercase tracking-[0.25em] text-black/60">{item.title}</p>
+                <p className="mt-2 text-sm text-graphite">{item.text}</p>
+              </div>
+            ))}
           </div>
         </div>
 
         {/* Right Column: Image */}
         <div className="order-1 lg:order-2 lg:sticky lg:top-24 lg:self-start">
-          <div className="bg-offwhite rounded-2xl overflow-hidden border border-stone/20 shadow-xl">
+          <div className="bg-offwhite rounded-3xl overflow-hidden border border-black/10 shadow-[0_30px_80px_-60px_rgba(0,0,0,0.7)]">
             <FullscreenImage
               src="/images/content/richard-orlinski-portrait.jpg"
               alt="Richard Orlinski"
@@ -81,16 +86,86 @@ export default function RichardOrlinskiPage() {
         </div>
       </section>
 
+      {/* Global Influence */}
+      <section className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+        <div className="relative overflow-hidden rounded-3xl border border-black/10 shadow-[0_30px_80px_-60px_rgba(0,0,0,0.7)]">
+          <div
+            aria-hidden="true"
+            className="absolute inset-0"
+            style={{
+              backgroundImage: "url('/images/global-influence.jpg')",
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            }}
+          />
+          <div className="absolute inset-0 bg-black/25" />
+        </div>
+
+        <div className="rounded-3xl border border-black/10 bg-offwhite/80 p-8 shadow-[0_30px_80px_-60px_rgba(0,0,0,0.7)]">
+          <div className="space-y-6">
+            <p className="text-xs uppercase tracking-[0.35em] text-black/60">Global Influence</p>
+            <h2 className="font-heading text-4xl md:text-5xl font-bold text-black">
+              A cultural reach that shapes markets.
+            </h2>
+            <p className="text-graphite text-lg">
+              Richard Orlinski’s global audience and brand visibility translate into real-world
+              demand for art‑led destinations.
+            </p>
+          </div>
+          <div className="mt-8 grid gap-4">
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div className="rounded-2xl border border-black/10 bg-white p-5 shadow-[0_20px_50px_-40px_rgba(0,0,0,0.6)]">
+                <p className="text-xs uppercase tracking-[0.25em] text-black/60">Followers</p>
+                <p className="mt-2 font-heading text-4xl text-black">9.1M</p>
+              </div>
+              <div className="rounded-2xl border border-black/10 bg-white p-5 shadow-[0_20px_50px_-40px_rgba(0,0,0,0.6)]">
+                <p className="text-xs uppercase tracking-[0.25em] text-black/60">Audience</p>
+                <div className="mt-3 grid gap-3 text-sm text-graphite">
+                  <div className="flex items-center justify-between gap-6">
+                    <span>Men</span>
+                    <span className="text-black">56%</span>
+                  </div>
+                  <div className="h-px bg-black/10" />
+                  <div className="flex items-center justify-between gap-6">
+                    <span>Women</span>
+                    <span className="text-black">44%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-3">
+              {[
+                { label: '25–34 years', value: '22%' },
+                { label: '35–44 years', value: '36%' },
+                { label: '45+ years', value: '18%' },
+              ].map((item) => (
+                <div
+                  key={item.label}
+                  className="rounded-2xl border border-black/10 bg-white p-5 shadow-[0_20px_50px_-40px_rgba(0,0,0,0.6)]"
+                >
+                  <p className="text-xs uppercase tracking-[0.25em] text-black/60">{item.label}</p>
+                  <p className="mt-2 font-heading text-3xl text-black">{item.value}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Artistic Universe */}
       <section className="space-y-8">
-        <h2 className="font-heading text-4xl md:text-5xl font-bold text-black">
-          The Orlinski Universe
-        </h2>
-        <p className="text-graphite text-lg max-w-3xl">
-          Richard Orlinski's artistic universe extends beyond sculpture to encompass architecture, 
-          design, and lifestyle. His faceted geometry aesthetic creates a distinctive visual language 
-          that transforms spaces into living works of art.
-        </p>
+        <div className="space-y-4 max-w-2xl">
+          <p className="text-gold text-xs md:text-sm font-medium uppercase tracking-[0.2em]">
+            The Orlinski Universe
+          </p>
+          <h2 className="font-heading text-4xl md:text-5xl font-bold text-black">
+            The Orlinski Universe
+          </h2>
+          <p className="text-graphite text-lg">
+            A visual language spanning sculpture, architecture, hospitality, and lifestyle — crafted
+            to turn space into a collectible experience.
+          </p>
+        </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           <EditorialCard
             title="Sculpture"
@@ -142,22 +217,24 @@ export default function RichardOrlinskiPage() {
 
 
       {/* CTA Section */}
-      <section className="bg-black text-offwhite py-24 px-6 rounded-lg text-center space-y-6">
-        <h2 className="font-heading text-4xl md:text-5xl font-bold">
-          Bring the Orlinski Universe to Your Project
-        </h2>
-        <p className="text-stone text-lg max-w-2xl mx-auto">
-          Partner with Orlinski Realty Group to create branded residences that transform real estate 
-          into collectible art. Discover how Richard Orlinski's artistic vision can elevate your 
-          development.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <CTAButton href="/developers" variant="light">
-            For Developers
-          </CTAButton>
-          <CTAButton href="/contact" variant="light">
-            Contact Us
-          </CTAButton>
+      <section className="bg-black text-offwhite py-8 px-6 rounded-2xl text-center shadow-[0_30px_80px_-60px_rgba(0,0,0,0.7)]">
+        <div className="flex min-h-[200px] flex-col items-center justify-center gap-5 max-w-3xl mx-auto">
+          <h2 className="font-heading text-4xl md:text-5xl font-bold text-offwhite">
+            Bring the Orlinski Universe to Your Concept
+          </h2>
+          <p className="text-stone text-lg md:text-xl">
+            Partner with Orlinski Realty Group to create branded residences that transform real estate
+            into collectible art. Discover how Richard Orlinski's artistic vision can elevate your
+            concept.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <CTAButton href="/developers" variant="light">
+              For Developers
+            </CTAButton>
+            <CTAButton href="/contact" variant="light">
+              Contact Us
+            </CTAButton>
+          </div>
         </div>
       </section>
     </div>

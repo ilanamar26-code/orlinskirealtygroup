@@ -9,7 +9,7 @@ interface CTAButtonProps {
 }
 
 export function CTAButton({ href, variant = 'dark', children, className }: CTAButtonProps) {
-  const baseStyles = 'px-8 py-4 rounded-lg font-medium text-sm transition-all duration-200'
+  const baseStyles = 'px-8 py-4 rounded-2xl font-medium text-sm transition-all duration-200'
   const variants = {
     dark: 'bg-black text-offwhite hover:bg-graphite',
     light: 'bg-offwhite text-black border-2 border-black hover:bg-stone',

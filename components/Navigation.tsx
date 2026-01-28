@@ -10,7 +10,7 @@ const navItems = [
   { label: 'Home', href: '/' },
   { label: 'Developers', href: '/developers' },
   { label: 'Richard Orlinski', href: '/brands' },
-  { label: 'Projects', href: '/projects' },
+  { label: 'Concepts', href: '/projects' },
   { label: 'Press', href: '/press' },
   { label: 'About', href: '/about' },
   { label: 'Contact', href: '/contact' },
@@ -22,9 +22,9 @@ export function Navigation() {
   return (
     <nav className="sticky top-0 z-50 bg-offwhite/80 backdrop-blur-sm border-b border-stone/20">
       <div className="max-w-screen-2xl mx-auto px-6 lg:px-12">
-        <div className="flex items-center justify-between h-40">
-          <Link href="/" className="flex items-center">
-            <Logo variant="silver" className="h-40" />
+        <div className="flex items-center justify-between h-20 md:h-24 overflow-hidden">
+          <Link href="/" className="flex items-center h-full">
+            <Logo variant="silver" className="h-40 md:h-40" />
           </Link>
 
           {/* Desktop Navigation */}

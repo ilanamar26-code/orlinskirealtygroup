@@ -1,6 +1,6 @@
-import { Hero } from '@/components/Hero'
 import { BentoGrid } from '@/components/BentoGrid'
 import { CTAButton } from '@/components/CTAButton'
+import { PageHero } from '@/components/PageHero'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -34,41 +34,57 @@ const benefits = [
 
 export default function InvestorsPage() {
   return (
-    <div>
-      <Hero
-        title="For Investors"
-        subtitle="Private access to curated branded residences and hospitality opportunities."
+    <div className="mx-auto max-w-[1200px] space-y-24 px-4 py-10 sm:px-6 lg:px-8">
+      <PageHero
+        label="For Investors"
+        title="Private access to curated branded residences."
+        subtitle="Confidentiality and curated access for investors aligned with art-driven, high-value real estate."
         ctaText="Request Private Access"
         ctaLink="/contact?flow=investor"
+        secondaryCtaText="Request NDA"
+        secondaryCtaLink="/contact?flow=nda"
       />
 
-      <section className="py-20">
-        <h2 className="font-heading text-4xl md:text-5xl font-bold mb-12">Why Invest with ORG</h2>
+      <section className="space-y-8">
+        <div className="space-y-4 max-w-2xl">
+          <p className="text-gold text-xs md:text-sm font-medium uppercase tracking-[0.2em]">
+            Why Invest with Orlinski Realty Group
+          </p>
+          <h2 className="font-heading text-4xl md:text-5xl font-bold text-black">
+            A strategic portfolio anchored in cultural value.
+          </h2>
+        </div>
         <BentoGrid items={benefits} />
       </section>
 
-      <section className="py-20 border-t border-stone/20">
-        <h2 className="font-heading text-4xl md:text-5xl font-bold mb-6">Investment Approach</h2>
-        <div className="max-w-3xl">
-          <p className="text-lg text-graphite leading-relaxed mb-6">
+      <section className="space-y-6 border-t border-black/10 pt-10">
+        <h2 className="font-heading text-4xl md:text-5xl font-bold text-black">
+          Investment Approach
+        </h2>
+        <div className="max-w-3xl space-y-4 text-graphite text-lg leading-relaxed">
+          <p>
             We work with investors who understand that branded real estate is more than an asset
-            class—it's a cultural statement. Our projects combine commercial rigor with artistic
+            class—it&apos;s a cultural statement. Our projects combine commercial rigor with artistic
             vision, creating value that extends beyond financial returns.
           </p>
-          <p className="text-graphite leading-relaxed">
+          <p className="text-base">
             All investment discussions are confidential and conducted under NDA. Access is curated
             and limited to qualified investors aligned with our philosophy.
           </p>
         </div>
       </section>
 
-      <section className="py-20 border-t border-stone/20 text-center">
-        <p className="text-xl text-graphite mb-8 max-w-2xl mx-auto">
+      <section className="rounded-2xl border border-black/10 bg-offwhite/80 p-8 text-center shadow-[0_24px_60px_-40px_rgba(0,0,0,0.6)]">
+        <p className="text-xl text-graphite mb-6 max-w-2xl mx-auto">
           Interested in private access? Submit your investor profile for review.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <CTAButton text="Request Private Access" href="/contact?flow=investor" />
-          <CTAButton text="Request NDA" href="/contact?flow=nda" variant="outline" />
+          <CTAButton href="/contact?flow=investor" variant="dark">
+            Request Private Access
+          </CTAButton>
+          <CTAButton href="/contact?flow=nda" variant="light">
+            Request NDA
+          </CTAButton>
         </div>
       </section>
     </div>

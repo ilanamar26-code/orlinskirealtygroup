@@ -37,3 +37,4 @@ next-env.d.ts
 
 # sanity
 .sanity
+.devserver-3002.log

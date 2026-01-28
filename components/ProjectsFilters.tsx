@@ -69,10 +69,10 @@ export function ProjectsFilters({ projects }: ProjectsFiltersProps) {
           <button
             key={region.id}
             onClick={() => setSelectedRegion(region.id)}
-            className={`px-6 py-2 rounded-full text-sm font-medium transition-colors ${
+            className={`px-6 py-2 rounded-full text-xs font-semibold uppercase tracking-[0.2em] transition-colors border ${
               selectedRegion === region.id
-                ? 'bg-black text-offwhite'
-                : 'bg-stone/10 text-graphite hover:bg-stone/20'
+                ? 'bg-black text-offwhite border-black'
+                : 'bg-offwhite/80 text-black/70 border-black/10 hover:bg-white'
             }`}
           >
             {region.label}

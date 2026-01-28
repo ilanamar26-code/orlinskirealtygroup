@@ -2,7 +2,7 @@
 
 import { useSearchParams } from 'next/navigation'
 import { CheckCircle } from 'lucide-react'
-import Link from 'next/link'
+import { CTAButton } from '@/components/CTAButton'
 
 export default function ThankYouPage() {
   const searchParams = useSearchParams()
@@ -29,24 +29,18 @@ export default function ThankYouPage() {
   const content = messages[type || 'submitted'] || messages.submitted
 
   return (
-    <div className="min-h-[60vh] flex items-center justify-center">
-      <div className="max-w-2xl mx-auto text-center px-6">
+    <div className="min-h-[60vh] flex items-center justify-center px-4 py-10 sm:px-6 lg:px-8">
+      <div className="max-w-2xl mx-auto text-center">
         <CheckCircle className="w-16 h-16 text-gold mx-auto mb-6" />
         <h1 className="font-heading text-4xl font-bold mb-6">{content.title}</h1>
-        <p className="text-lg text-gray-700 mb-8 leading-relaxed">{content.message}</p>
+        <p className="text-lg text-graphite mb-8 leading-relaxed">{content.message}</p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link
-            href="/"
-            className="px-6 py-3 bg-black text-white font-heading text-sm font-semibold hover:bg-gray-900 transition-colors"
-          >
+          <CTAButton href="/" variant="dark">
             Return Home
-          </Link>
-          <Link
-            href="/contact"
-            className="px-6 py-3 border-2 border-black text-black font-heading text-sm font-semibold hover:bg-black hover:text-white transition-colors"
-          >
+          </CTAButton>
+          <CTAButton href="/contact" variant="light">
             Submit Another
-          </Link>
+          </CTAButton>
         </div>
       </div>
     </div>

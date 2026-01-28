@@ -12,15 +12,24 @@ interface PressCardProps {
 }
 
 export function PressCard({ title, publisher, date, url, imageUrl }: PressCardProps) {
+  let logoUrl: string | null = null
+  try {
+    const normalizedUrl = url.startsWith('http') ? url : `https://${url}`
+    const domain = new URL(normalizedUrl).hostname.replace(/^www\./, '')
+    logoUrl = `https://www.google.com/s2/favicons?sz=64&domain=${domain}`
+  } catch {
+    logoUrl = null
+  }
+
   return (
     <Link
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      className="group block bg-offwhite border border-stone/30 hover:border-stone/60 rounded-lg overflow-hidden transition-all duration-300"
+      className="group block rounded-2xl border border-black/10 bg-offwhite/70 hover:bg-white shadow-[0_20px_50px_-40px_rgba(0,0,0,0.6)] overflow-hidden transition-all duration-300"
     >
       {imageUrl ? (
-        <div className="relative aspect-video w-full overflow-hidden bg-stone/10">
+        <div className="relative aspect-video w-full overflow-hidden bg-offwhite/70">
           <Image
             src={imageUrl}
             alt={title}
@@ -29,7 +38,7 @@ export function PressCard({ title, publisher, date, url, imageUrl }: PressCardPr
           />
         </div>
       ) : (
-        <div className="relative aspect-video w-full overflow-hidden bg-stone/10 flex items-center justify-center">
+        <div className="relative aspect-video w-full overflow-hidden bg-offwhite/70 flex items-center justify-center">
           <Image
             src="/logo/logo-horizontal-silver.png"
             alt={publisher}
@@ -40,12 +49,27 @@ export function PressCard({ title, publisher, date, url, imageUrl }: PressCardPr
         </div>
       )}
       <div className="p-6 space-y-3">
-        <div className="flex items-start justify-between gap-2">
-          <div className="flex-1 space-y-2">
-            <p className="text-gold text-xs font-medium uppercase">{publisher}</p>
-            {date && <p className="text-graphite text-xs">{date}</p>}
+        <div className="flex items-center justify-between gap-3">
+          <div className="flex items-center gap-3">
+            {logoUrl && (
+              <div className="flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-gradient-to-br from-white to-stone/10 shadow">
+                <img
+                  src={logoUrl}
+                  alt={`${publisher} logo`}
+                  className="h-6 w-6 object-contain"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+            )}
+            <div className="space-y-1">
+              <p className="text-gold text-xs font-medium uppercase">{publisher}</p>
+              {date && <p className="text-graphite text-xs">{date}</p>}
+            </div>
           </div>
-          <ExternalLink size={16} className="text-graphite group-hover:text-black transition-colors flex-shrink-0 mt-1" />
+          <ExternalLink
+            size={16}
+            className="text-graphite group-hover:text-black transition-colors flex-shrink-0"
+          />
         </div>
         <h3 className="font-heading text-lg font-semibold text-black line-clamp-2 group-hover:text-gold transition-colors">
           {title}

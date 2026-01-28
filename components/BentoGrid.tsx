@@ -26,7 +26,7 @@ export function BentoGrid({ items }: BentoGridProps) {
             key={itemSlug}
             href={`/brands/${itemSlug}`}
             className={cn(
-              'group relative overflow-hidden rounded-lg bg-stone/10 hover:bg-stone/20 transition-all duration-300',
+              'group relative overflow-hidden rounded-2xl border border-black/10 bg-offwhite/70 hover:bg-white shadow-[0_20px_50px_-40px_rgba(0,0,0,0.6)] transition-all duration-300',
               index === 0 && 'md:col-span-2 md:row-span-2',
             )}
           >

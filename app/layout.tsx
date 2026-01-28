@@ -20,7 +20,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: 'Orlinski Realty Group | Branded Residences & Hospitality',
   description:
-    'Curating branded residences and hospitality partnerships. NDA-first, curated access for visionary developers, landowners, and investors.',
+    'Curating branded residences and hospitality partnerships. Confidentiality and curated access for visionary developers, landowners, and investors.',
   keywords: [
     'branded residences',
     'hospitality partnerships',
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   authors: [{ name: 'Orlinski Realty Group' }],
   openGraph: {
     title: 'Orlinski Realty Group | Branded Residences & Hospitality',
-    description: 'Curating branded residences and hospitality partnerships. NDA-first, curated access.',
+    description: 'Curating branded residences and hospitality partnerships. Confidentiality and curated access.',
     type: 'website',
     locale: 'en_US',
   },

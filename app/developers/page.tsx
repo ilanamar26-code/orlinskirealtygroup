@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { CTAButton } from '@/components/CTAButton'
 import { BentoGrid } from '@/components/BentoGrid'
 
@@ -41,7 +42,7 @@ const benefits = [
 
 export default function DevelopersPage() {
   return (
-    <div className="space-y-24 py-12">
+    <div className="mx-auto max-w-[1200px] space-y-24 px-4 py-10 sm:px-6 lg:px-8">
       {/* Hero */}
       <section className="space-y-6 text-center max-w-3xl mx-auto">
         <h1 className="font-heading text-5xl md:text-6xl font-bold text-black">
@@ -57,14 +58,14 @@ export default function DevelopersPage() {
       <section className="space-y-8">
         <h2 className="font-heading text-4xl font-bold text-black">Who This Is For</h2>
         <div className="grid md:grid-cols-2 gap-8">
-          <div className="space-y-4 p-8 bg-stone/10 rounded-lg">
+          <div className="space-y-4 p-8 rounded-2xl border border-black/10 bg-offwhite/80 shadow-[0_24px_60px_-40px_rgba(0,0,0,0.6)]">
             <h3 className="font-heading text-xl font-semibold text-black">Serious Developers</h3>
             <p className="text-graphite">
               Established developers with a track record of delivering premium residential and
-              hospitality projects. Projects typically have a GDV of $50M+.
+              hospitality concepts. Concepts typically have a GDV of $50M+.
             </p>
           </div>
-          <div className="space-y-4 p-8 bg-stone/10 rounded-lg">
+          <div className="space-y-4 p-8 rounded-2xl border border-black/10 bg-offwhite/80 shadow-[0_24px_60px_-40px_rgba(0,0,0,0.6)]">
             <h3 className="font-heading text-xl font-semibold text-black">Vision Alignment</h3>
             <p className="text-graphite">
               Developers who understand the value of brand differentiation and are committed to
@@ -75,7 +76,7 @@ export default function DevelopersPage() {
       </section>
 
       {/* Track Record */}
-      <section className="bg-black text-offwhite py-16 px-6 rounded-lg space-y-8">
+      <section className="bg-black text-offwhite py-12 px-6 rounded-2xl space-y-8 shadow-[0_30px_80px_-60px_rgba(0,0,0,0.7)]">
         <div className="text-center space-y-4 max-w-3xl mx-auto">
           <h2 className="font-heading text-4xl font-bold">Proven Track Record</h2>
           <p className="text-stone text-lg">
@@ -113,7 +114,10 @@ export default function DevelopersPage() {
         <h2 className="font-heading text-4xl font-bold text-black">What We Bring</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {benefits.map((benefit, index) => (
-            <div key={index} className="space-y-4 p-6 bg-stone/10 rounded-lg">
+            <div
+              key={index}
+              className="space-y-4 p-6 rounded-2xl border border-black/10 bg-offwhite/80 shadow-[0_24px_60px_-40px_rgba(0,0,0,0.6)]"
+            >
               <h3 className="font-heading text-lg font-semibold text-black">{benefit.title}</h3>
               <p className="text-graphite text-sm">{benefit.description}</p>
             </div>
@@ -140,7 +144,7 @@ export default function DevelopersPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-black text-offwhite py-16 px-6 rounded-lg text-center space-y-6">
+      <section className="bg-black text-offwhite py-10 px-6 rounded-2xl text-center space-y-6 shadow-[0_30px_80px_-60px_rgba(0,0,0,0.7)]">
         <h2 className="font-heading text-3xl md:text-4xl font-bold">
           Ready to Explore a Partnership?
         </h2>
