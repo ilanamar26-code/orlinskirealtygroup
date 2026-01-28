@@ -43,7 +43,7 @@ export function QualificationForm() {
       <div className="rounded-2xl border border-black/10 bg-offwhite/80 p-8 text-center space-y-4 shadow-[0_24px_60px_-40px_rgba(0,0,0,0.6)]">
         <h2 className="font-heading text-2xl font-bold text-black">Thank You</h2>
         <p className="text-graphite">
-          We've received your inquiry and will be in touch shortly. All communications are
+          We&apos;ve received your inquiry and will be in touch shortly. All communications are
           confidential.
         </p>
       </div>

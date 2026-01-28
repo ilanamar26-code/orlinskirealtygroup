@@ -86,3 +86,27 @@ export async function getAllPressItems() {
     return []
   }
 }
+
+export async function getInsights() {
+  if (!sanityClient) return []
+  try {
+    return await sanityClient.fetch(`*[_type == "insight"] | order(publishedAt desc)`)
+  } catch (error) {
+    console.error('Error fetching insights:', error)
+    return []
+  }
+}
+
+export async function getInsightBySlug(slug: string) {
+  if (!sanityClient) return null
+  try {
+    const insight = await sanityClient.fetch(
+      `*[_type == "insight" && slug.current == $slug][0]`,
+      { slug },
+    )
+    return insight || null
+  } catch (error) {
+    console.error('Error fetching insight:', error)
+    return null
+  }
+}

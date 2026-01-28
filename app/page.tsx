@@ -360,7 +360,7 @@ export default async function HomePage() {
           </h2>
           <p className="text-stone text-base md:text-lg">
             Are you a developer, landowner, or investor interested in exploring a branded residence
-            partnership? Let's discuss your vision.
+            partnership? Let&apos;s discuss your vision.
           </p>
           <div className="pt-1">
             <CTAButton href="/contact" variant="light" className="px-8 py-3.5 text-base md:text-lg">
