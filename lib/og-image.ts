@@ -39,17 +39,17 @@ export async function getOgImage(url: string): Promise<string | null> {
 
     // Try to find first large image in the page
     const imgMatches = html.matchAll(/<img[^>]+src=["']([^"']+)["']/gi)
-    for (const match of imgMatches) {
+    const imgList = Array.from(imgMatches)
+    for (const match of imgList) {
       if (match[1]) {
         const imgUrl = convertToAbsoluteUrl(match[1], url)
-        // Check if image is likely to be a featured image (contains keywords or is large)
         if (
           imgUrl &&
           (imgUrl.includes('featured') ||
             imgUrl.includes('hero') ||
             imgUrl.includes('cover') ||
             imgUrl.includes('og') ||
-            imgUrl.match(/\d{3,4}x\d{3,4}/)) // Dimensions in URL
+            imgUrl.match(/\d{3,4}x\d{3,4}/))
         ) {
           return imgUrl
         }
