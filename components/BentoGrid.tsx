@@ -24,8 +24,7 @@ export function BentoGrid({ items, linkBase = '/brands' }: BentoGridProps) {
         const itemSlug = typeof item.slug === 'object' ? item.slug.current : item.slug
         const title = item.name || item.title || ''
 
-        return (
-          {itemSlug && linkBase ? (
+        return itemSlug && linkBase ? (
             <Link
               key={itemSlug || title || index}
               href={`${linkBase}/${itemSlug}`}
@@ -82,8 +81,7 @@ export function BentoGrid({ items, linkBase = '/brands' }: BentoGridProps) {
                 )}
               </div>
             </div>
-          )}
-        )
+          )
       })}
     </div>
   )
